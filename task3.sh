@@ -1,24 +1,20 @@
 #!/usr/bin/env sh
- 
+
 bashrc_path="$HOME/.bashrc"
 
-#checking if the basjrc file exists or not
+# Checking if the .bashrc file exists or not
+if [ -e "$HOME/.bashrc" ]; then
 
-if [ -e "$HOME/.bashrc" ];then  
+  # Appending the Hello environment variable
+  echo "export HELLO=$HOSTNAME" >> "$bashrc_path"
 
+  # Appending the local variable
+  echo "LOCAL=$(whoami)" >> "$bashrc_path"
 
- #appending the Hello environment variable 
-
-  echo "export HELLO=$HOSTNAME">>$bashrc_path
-
-#appending the local variable  
-  echo "LOCAL=$(whoami)">>$bashrc_path
-
-#openning new terminal
-
-gnome-terminal
+  # Opening a new terminal and sourcing .bashrc
+  gnome-terminal 
 
 else
-  echo "the bashrc file doesn't exist"
+  echo "The .bashrc file doesn't exist."
+fi
 
-fi 
