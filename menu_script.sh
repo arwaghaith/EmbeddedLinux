@@ -41,6 +41,7 @@ do
             echo "You are exiting the menu"
             ;;
         *)
+            echo "invalid"
             echo "Please enter a valid choice"
             ;;
     esac
