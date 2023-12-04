@@ -13,7 +13,7 @@ echo `uptime`
 }
 showCurrentUsers()
 {
-echo `who` 
+echo `w` 
 }
 choice=1
 while [ $choice != 0 ]
