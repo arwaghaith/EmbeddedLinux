@@ -1,2 +1,2 @@
 # EmbeddedLinux
-This repository for uploading  The assignments for an ITI course
+This repository is for uploading  The assignments for an ITI course
