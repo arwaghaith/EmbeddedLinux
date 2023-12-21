@@ -16,6 +16,14 @@ This repository is for uploading  The assignments for an ITI course
 
 
 
+
+
+
+
+
+
+
+
 2-static linking
 ![Screenshot 4](Embedded_Linux/screenshots/Screenshot4.png)
 
