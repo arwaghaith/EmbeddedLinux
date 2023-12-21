@@ -2,10 +2,10 @@
 This repository is for uploading  The assignments for an ITI course
 
 1-Dynamic linking
------------------------------------------------------------------------------------------------------
 <br>
 <br>
-![Screenshot 4](Embedded_Linux/screenshots/Screenshot3.png)
+-
+![Screenshot 3](Embedded_Linux/screenshots/Screenshot3.png)
 
 ![Screenshot 4](Embedded_Linux/screenshots/Screenshot4.png)
 
