@@ -91,5 +91,4 @@ This lab demonstrates how to create and use a shared library in a C program.
 <br>
 <br>
 
-![Screenshot 5](Embedded_Linux/screenshots/Screenshot5.png)
 
