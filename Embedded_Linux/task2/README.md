@@ -14,6 +14,6 @@ Before you begin, make sure you have the following prerequisites installed on yo
 To get started, clone the Crosstool-ng repository by running the following command:
 
 ```
-git clone crosstool-ng/crosstool-ng: A versatile (cross-)toolchain generator
+git clone crosstool-ng/crosstool-ng
 
 ```
