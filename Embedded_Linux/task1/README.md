@@ -20,7 +20,7 @@ This lab demonstrates how to create and use a shared library in a C program.
   ```shell
   gcc -c -g -Wall -fPIC Lib/file.c
   ```
-![Screenshot 1](screenshots/Screenshota.png)
+![Screenshot 1](../screenshots/Screenshota.png)
 
 5. Create the shared library using the following command:
   ```shell
@@ -33,7 +33,7 @@ This lab demonstrates how to create and use a shared library in a C program.
   gcc main.c -L./Lib -ldynamic -o calc -I./Include
   ```
 
- ![Screenshot 2](screenshots/Screenshotb.png)
+ ![Screenshot 2](../screenshots/Screenshotb.png)
 
 7. Compile and link the application with the shared library using the same command as step 5.
 
@@ -42,9 +42,9 @@ This lab demonstrates how to create and use a shared library in a C program.
   ./calc
   ```
 
-![Screenshot 3](screenshots/Screenshotc.png)
+![Screenshot 3](../screenshots/Screenshotc.png)
 
-![Screenshot 4](screenshots/Screenshot4.png)
+![Screenshot 4](../screenshots/Screenshot4.png)
 
 
 
@@ -71,7 +71,7 @@ This lab demonstrates how to create and use a shared library in a C program.
     ```
     ar rcs lib_static.a file1.o file2.o
     ```
-    ![Screenshot 5](screenshots/Screenshot2a.png)
+    ![Screenshot 5](../screenshots/Screenshot2a.png)
 
 
 3. Generate `main.o` to include the header library in the symbol table:
@@ -83,7 +83,7 @@ This lab demonstrates how to create and use a shared library in a C program.
     ```
     gcc -o calc.exe main.o lib_static.a
     ```
-     ![Screenshot 6](screenshots/Screenshot2b.png)
+     ![Screenshot 6](../screenshots/Screenshot2b.png)
 
    
 
