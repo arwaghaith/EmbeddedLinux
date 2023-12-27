@@ -20,7 +20,7 @@ This lab demonstrates how to create and use a shared library in a C program.
   ```shell
   gcc -c -g -Wall -fPIC Lib/file.c
   ```
-![Screenshot 1](Embedded_Linux/screenshots/Screenshota.png)
+![Screenshot 1](screenshots/Screenshota.png)
 
 5. Create the shared library using the following command:
   ```shell
