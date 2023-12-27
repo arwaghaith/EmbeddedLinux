@@ -54,7 +54,31 @@ This lab demonstrates how to create and use a shared library in a C program.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-2-static linking
+# Static Linking
+
+## Creating Libraries (Same as Dynamic Linking)
+
+1. Compile each `file.c` (except `main.c` for now) using the following command:
+    ```
+    gcc -c file.c -o file.o
+    ```
+
+2. Archive the `.o` files into one library using the following command:
+    ```
+    ar rcs lib_static.a file1.o file2.o
+    ```
+
+3. Generate `main.o` to include the header library in the symbol table:
+    ```
+    gcc -c main.c -I ./Include
+    ```
+
+4. Generate the executable using the following command:
+    ```
+    gcc -o calc.exe main.o lib_static.a
+    ```
+
+
 <br>
 <br>
 
