@@ -1,6 +1,6 @@
 # Customizing ARM Toolchain
 
-This repository provides instructions on how to customize an ARM toolchain for your specific development needs.
+This file provides instructions on how to customize an ARM toolchain for your specific development needs.
 
 ## Prerequisites
 
