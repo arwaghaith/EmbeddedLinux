@@ -1,94 +1,48 @@
-# EmbeddedLinux
-# Dynamic and Static Linking
+# Customizing ARM Toolchain
 
-## Dynamic Linking
-
-This lab demonstrates how to create and use a shared library in a C program.
+This repository provides instructions on how to customize an ARM toolchain for your specific development needs.
 
 ## Prerequisites
-- avr-gcc compiler
 
-## Steps
+Before you begin, make sure you have the following prerequisites installed on your system:
 
-1. First, create a library called `DynamicLibrary_Lab`.
+- Git
+- Crosstool-ng
 
-2. Create two directories: `Include` and `Lib`.
-
-3. Place the header files (`*.h`) in the `Include` directory and the source files (`*.c`) in the `Lib` directory.
-
-4. Compile each source file (except `main.c`) using the following command:
-  ```shell
-  gcc -c -g -Wall -fPIC Lib/file.c
-  ```
-![Screenshot 1](screenshots/Screenshota.png)
-
-5. Create the shared library using the following command:
-  ```shell
-  gcc -shared -o libdynamic.so Lib/file.o ...
-  ```
-
-
-6. Compile and link the application with the shared library using the following command:
-  ```shell
-  gcc main.c -L./Lib -ldynamic -o calc -I./Include
-  ```
-
- ![Screenshot 2](screenshots/Screenshotb.png)
-
-7. Compile and link the application with the shared library using the same command as step 5.
-
-8. Run the application:
-  ```shell
-  ./calc
-  ```
-
-![Screenshot 3](screenshots/Screenshotc.png)
-
-![Screenshot 4](screenshots/Screenshot4.png)
-
-
-
-
-
+## Sysroot
 <br>
 <br>
+### Definition
 
+Sysroot is a directory holding a minimal filesystem for the target environment in embedded Linux development.
 
+### Purpose
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+- Isolates target environment from the host.
+- Enables cross-compilation by providing target-specific files.
+- Manages dependencies to avoid library mismatches.
 
-# Static Linking
+### Example
 
-## Creating Libraries (Same as Dynamic Linking)
+If you are developing for an ARM-based embedded system on an x86 host, the sysroot would contain ARM-specific libraries and headers.
 
-1. Compile each `file.c` (except `main.c` for now) using the following command:
-    ```
-    gcc -c file.c -o file.o
-    ```
+## Binutils
 
-2. Archive the `.o` files into one library using the following command:
-    ```
-    ar rcs lib_static.a file1.o file2.o
-    ```
-    ![Screenshot 5](screenshots/Screenshot2a.png)
+### Definition
 
+Binutils is a collection of binary utilities for manipulating object files, executables, and libraries.
 
-3. Generate `main.o` to include the header library in the symbol table:
-    ```
-    gcc -c main.c -I ./Include
-    ```
+### Components
 
-4. Generate the executable using the following command:
-    ```
-    gcc -o calc.exe main.o lib_static.a
-    ```
-     ![Screenshot 6](screenshots/Screenshot2b.png)
+- Assembler (as): Translates assembly code to machine code.
+- Linker (ld): Links object files into executables or libraries.
+- Binary Utilities (objcopy, objdump, readelf, etc.): Tools for binary file manipulation and analysis.
 
-   
+### Example
 
+- Using the linker (ld) to combine object files into an executable: `ld -o output_executable input_file1.o input_file2.o`.
+- Employing objcopy to copy sections from one binary to another: `objcopy --input-target=binary --output-target=ihex input.bin output.hex`.
 
-<br>
-<br>
+In summary, sysroot provides an isolated target environment for cross-compilation, while Binutils offers essential tools like the linker and binary utilities for compiling, linking, and manipulating binary files in embedded Linux development.
 
 
