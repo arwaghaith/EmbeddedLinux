@@ -20,16 +20,20 @@ This lab demonstrates how to create and use a shared library in a C program.
   ```shell
   gcc -c -g -Wall -fPIC Lib/file.c
   ```
+![Screenshot 1](Embedded_Linux/screenshots/Screenshota.png)
 
-5. Compile and link the application with the shared library using the following command:
+5. Create the shared library using the following command:
+  ```shell
+  gcc -shared -o libdynamic.so Lib/file.o ...
+  ```
+
+
+6. Compile and link the application with the shared library using the following command:
   ```shell
   gcc main.c -L./Lib -ldynamic -o calc -I./Include
   ```
 
-6. Create the shared library using the following command:
-  ```shell
-  gcc -shared -o libdynamic.so Lib/file.o ...
-  ```
+ ![Screenshot 2](Embedded_Linux/screenshots/Screenshotb.png)
 
 7. Compile and link the application with the shared library using the same command as step 5.
 
@@ -38,7 +42,7 @@ This lab demonstrates how to create and use a shared library in a C program.
   ./calc
   ```
 
-![Screenshot 3](Embedded_Linux/screenshots/Screenshot3.png)
+![Screenshot 3](Embedded_Linux/screenshots/Screenshotc.png)
 
 ![Screenshot 4](Embedded_Linux/screenshots/Screenshot4.png)
 
