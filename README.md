@@ -1,7 +1,7 @@
 # EmbeddedLinux
-This repository is for uploading  The assignments for an ITI course
+# Dynamic and Static Linking
 
-# Dynamic Linking Lab
+## Dynamic Linking
 
 This lab demonstrates how to create and use a shared library in a C program.
 
@@ -71,6 +71,8 @@ This lab demonstrates how to create and use a shared library in a C program.
     ```
     ar rcs lib_static.a file1.o file2.o
     ```
+    ![Screenshot 5](Embedded_Linux/screenshots/Screenshot2a.png)
+
 
 3. Generate `main.o` to include the header library in the symbol table:
     ```
@@ -81,6 +83,9 @@ This lab demonstrates how to create and use a shared library in a C program.
     ```
     gcc -o calc.exe main.o lib_static.a
     ```
+     ![Screenshot 6](Embedded_Linux/screenshots/Screenshot2b.png)
+
+   
 
 
 <br>
