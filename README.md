@@ -6,7 +6,7 @@ This repository is for uploading  The assignments for an ITI course
 This lab demonstrates how to create and use a shared library in a C program.
 
 ## Prerequisites
-- GCC compiler
+- avr-gcc compiler
 
 ## Steps
 
