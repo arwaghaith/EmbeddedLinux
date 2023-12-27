@@ -22,9 +22,22 @@ To develop a static library for an AVR application using MCAL drivers, follow th
     ```bash
     avr-gcc -o application.elf main.o -L/path/to/mcal/library -lmcal
     ```
+    <br>
+<br>
+
  ![Screenshot 10](../screenshots/Screenshot3c.png)
+     <br>
+         <br>
+
+
 Flashing the application.elf to ATmega32 on Proteus:
- ![Screenshot 10](../screenshots/Screenshot3c.png)
+    <br>
+    <br>
+
+ ![Screenshot 10](../screenshots/video1.MP4)
+     <br>
+    <br>
+
 
 
 ##Another solution using make 
