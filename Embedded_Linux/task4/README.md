@@ -42,7 +42,7 @@ Flashing the application.elf to ATmega32 on Proteus:
     <br>
     <br>
 
- ![video 1](../screenshots/video1.MP4)
+ ![video 1](../screenshots/video1.gif)
      <br>
     <br>
 
