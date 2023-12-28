@@ -6,7 +6,7 @@ To develop a static library for an AVR application using MCAL drivers, follow th
     ```bash
     avr-gcc -c PORT.c DIO.c PORT_cfg.c TASKSD.c
     ```
- ![Screenshot 10](../screenshots/Screenshot3.a.png)
+&nbsp;&nbsp; ![Screenshot 10](../screenshots/Screenshot3.a.png)
 
 2. Archive the object files:
     ```bash
@@ -15,7 +15,7 @@ To develop a static library for an AVR application using MCAL drivers, follow th
       <br>
     <br>
 
- ![Screenshot 10](../screenshots/Screenshot3.b.png)
+&nbsp;&nbsp; ![Screenshot 10](../screenshots/Screenshot3.b.png)
    <br>
     <br>
 
@@ -33,7 +33,7 @@ To develop a static library for an AVR application using MCAL drivers, follow th
     <br>
 <br>
 
- ![Screenshot 10](../screenshots/Screenshot3c.png)
+&nbsp;&nbsp; ![Screenshot 10](../screenshots/Screenshot3c.png)
      <br>
          <br>
 
@@ -42,7 +42,7 @@ Flashing the application.elf to ATmega32 on Proteus:
     <br>
     <br>
 
- ![video 1](../screenshots/video1.gif)
+&nbsp;&nbsp; ![video 1](../screenshots/video1.gif)
      <br>
     <br>
 
