@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/calc.dir/main.c.o CMakeFiles/calc.dir/Lib/addition.c.o CMakeFiles/calc.dir/Lib/division.c.o CMakeFiles/calc.dir/Lib/modulus.c.o CMakeFiles/calc.dir/Lib/multiplication.c.o CMakeFiles/calc.dir/Lib/subtraction.c.o -o calc 

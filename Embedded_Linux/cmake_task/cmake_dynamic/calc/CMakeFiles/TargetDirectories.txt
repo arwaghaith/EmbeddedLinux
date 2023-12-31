@@ -1,0 +1,7 @@
+/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/calc/CMakeFiles/calculator.dir
+/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/calc/CMakeFiles/edit_cache.dir
+/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/calc/CMakeFiles/rebuild_cache.dir
+/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/calc/CMakeFiles/list_install_components.dir
+/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/calc/CMakeFiles/install.dir
+/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/calc/CMakeFiles/install/local.dir
+/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/calc/CMakeFiles/install/strip.dir
