@@ -1,4 +1,4 @@
-# Install script for directory: /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_static
+# Install script for directory: /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,15 +43,30 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}/usr/lib/libdynamicCalc.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/libdynamicCalc.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}/usr/lib/libdynamicCalc.so"
+         RPATH "")
+  endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/usr/lib/libcalculatorSLib.a")
+   "/usr/lib/libdynamicCalc.so")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/usr/lib" TYPE STATIC_LIBRARY FILES "/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_static/libcalculatorSLib.a")
+  file(INSTALL DESTINATION "/usr/lib" TYPE SHARED_LIBRARY FILES "/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/libdynamicCalc.so")
+  if(EXISTS "$ENV{DESTDIR}/usr/lib/libdynamicCalc.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/libdynamicCalc.so")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/lib/libdynamicCalc.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -62,5 +77,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_static/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

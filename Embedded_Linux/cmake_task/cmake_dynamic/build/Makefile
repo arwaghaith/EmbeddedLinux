@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_static
+CMAKE_SOURCE_DIR = /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_static
+CMAKE_BINARY_DIR = /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_static/CMakeFiles /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_static//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/CMakeFiles /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_static/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -162,24 +162,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named calculatorSLib
+# Target rules for targets named dynamicCalc
 
 # Build rule for target.
-calculatorSLib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 calculatorSLib
-.PHONY : calculatorSLib
+dynamicCalc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dynamicCalc
+.PHONY : dynamicCalc
 
 # fast build rule for target.
-calculatorSLib/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/build
-.PHONY : calculatorSLib/fast
+dynamicCalc/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/build
+.PHONY : dynamicCalc/fast
 
 Lib/addition.o: Lib/addition.c.o
 .PHONY : Lib/addition.o
 
 # target to build an object file
 Lib/addition.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/addition.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/addition.c.o
 .PHONY : Lib/addition.c.o
 
 Lib/addition.i: Lib/addition.c.i
@@ -187,7 +187,7 @@ Lib/addition.i: Lib/addition.c.i
 
 # target to preprocess a source file
 Lib/addition.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/addition.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/addition.c.i
 .PHONY : Lib/addition.c.i
 
 Lib/addition.s: Lib/addition.c.s
@@ -195,7 +195,7 @@ Lib/addition.s: Lib/addition.c.s
 
 # target to generate assembly for a file
 Lib/addition.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/addition.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/addition.c.s
 .PHONY : Lib/addition.c.s
 
 Lib/division.o: Lib/division.c.o
@@ -203,7 +203,7 @@ Lib/division.o: Lib/division.c.o
 
 # target to build an object file
 Lib/division.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/division.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/division.c.o
 .PHONY : Lib/division.c.o
 
 Lib/division.i: Lib/division.c.i
@@ -211,7 +211,7 @@ Lib/division.i: Lib/division.c.i
 
 # target to preprocess a source file
 Lib/division.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/division.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/division.c.i
 .PHONY : Lib/division.c.i
 
 Lib/division.s: Lib/division.c.s
@@ -219,7 +219,7 @@ Lib/division.s: Lib/division.c.s
 
 # target to generate assembly for a file
 Lib/division.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/division.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/division.c.s
 .PHONY : Lib/division.c.s
 
 Lib/modulus.o: Lib/modulus.c.o
@@ -227,7 +227,7 @@ Lib/modulus.o: Lib/modulus.c.o
 
 # target to build an object file
 Lib/modulus.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/modulus.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/modulus.c.o
 .PHONY : Lib/modulus.c.o
 
 Lib/modulus.i: Lib/modulus.c.i
@@ -235,7 +235,7 @@ Lib/modulus.i: Lib/modulus.c.i
 
 # target to preprocess a source file
 Lib/modulus.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/modulus.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/modulus.c.i
 .PHONY : Lib/modulus.c.i
 
 Lib/modulus.s: Lib/modulus.c.s
@@ -243,7 +243,7 @@ Lib/modulus.s: Lib/modulus.c.s
 
 # target to generate assembly for a file
 Lib/modulus.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/modulus.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/modulus.c.s
 .PHONY : Lib/modulus.c.s
 
 Lib/multiplication.o: Lib/multiplication.c.o
@@ -251,7 +251,7 @@ Lib/multiplication.o: Lib/multiplication.c.o
 
 # target to build an object file
 Lib/multiplication.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/multiplication.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/multiplication.c.o
 .PHONY : Lib/multiplication.c.o
 
 Lib/multiplication.i: Lib/multiplication.c.i
@@ -259,7 +259,7 @@ Lib/multiplication.i: Lib/multiplication.c.i
 
 # target to preprocess a source file
 Lib/multiplication.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/multiplication.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/multiplication.c.i
 .PHONY : Lib/multiplication.c.i
 
 Lib/multiplication.s: Lib/multiplication.c.s
@@ -267,7 +267,7 @@ Lib/multiplication.s: Lib/multiplication.c.s
 
 # target to generate assembly for a file
 Lib/multiplication.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/multiplication.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/multiplication.c.s
 .PHONY : Lib/multiplication.c.s
 
 Lib/subtraction.o: Lib/subtraction.c.o
@@ -275,7 +275,7 @@ Lib/subtraction.o: Lib/subtraction.c.o
 
 # target to build an object file
 Lib/subtraction.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/subtraction.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/subtraction.c.o
 .PHONY : Lib/subtraction.c.o
 
 Lib/subtraction.i: Lib/subtraction.c.i
@@ -283,7 +283,7 @@ Lib/subtraction.i: Lib/subtraction.c.i
 
 # target to preprocess a source file
 Lib/subtraction.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/subtraction.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/subtraction.c.i
 .PHONY : Lib/subtraction.c.i
 
 Lib/subtraction.s: Lib/subtraction.c.s
@@ -291,7 +291,7 @@ Lib/subtraction.s: Lib/subtraction.c.s
 
 # target to generate assembly for a file
 Lib/subtraction.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculatorSLib.dir/build.make CMakeFiles/calculatorSLib.dir/Lib/subtraction.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/Lib/subtraction.c.s
 .PHONY : Lib/subtraction.c.s
 
 # Help Target
@@ -306,7 +306,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... calculatorSLib"
+	@echo "... dynamicCalc"
 	@echo "... Lib/addition.o"
 	@echo "... Lib/addition.i"
 	@echo "... Lib/addition.s"
