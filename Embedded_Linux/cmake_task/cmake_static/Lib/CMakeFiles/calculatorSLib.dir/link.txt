@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcalculatorSLib.a CMakeFiles/calculatorSLib.dir/addition.c.o CMakeFiles/calculatorSLib.dir/division.c.o CMakeFiles/calculatorSLib.dir/modulus.c.o CMakeFiles/calculatorSLib.dir/multiplication.c.o CMakeFiles/calculatorSLib.dir/subtraction.c.o
+/usr/bin/ranlib libcalculatorSLib.a

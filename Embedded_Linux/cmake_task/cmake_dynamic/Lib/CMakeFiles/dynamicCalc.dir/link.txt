@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -shared -Wl,-soname,libdynamicCalc.so -o libdynamicCalc.so CMakeFiles/dynamicCalc.dir/addition.c.o CMakeFiles/dynamicCalc.dir/division.c.o CMakeFiles/dynamicCalc.dir/modulus.c.o CMakeFiles/dynamicCalc.dir/multiplication.c.o CMakeFiles/dynamicCalc.dir/subtraction.c.o 

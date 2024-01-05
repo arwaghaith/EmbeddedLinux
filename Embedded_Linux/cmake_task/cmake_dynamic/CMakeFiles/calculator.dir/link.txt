@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/calculator.dir/calc/main.c.o -o calculator  -Wl,-rpath,/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/Lib: Lib/libdynamicCalc.so 

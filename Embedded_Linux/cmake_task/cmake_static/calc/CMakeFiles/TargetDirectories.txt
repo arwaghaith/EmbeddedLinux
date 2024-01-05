@@ -1,3 +1,0 @@
-/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_static/calc/CMakeFiles/calc.dir
-/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_static/calc/CMakeFiles/edit_cache.dir
-/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_static/calc/CMakeFiles/rebuild_cache.dir

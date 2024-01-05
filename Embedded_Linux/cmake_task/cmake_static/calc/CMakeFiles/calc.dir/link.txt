@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/calc.dir/main.c.o -o calc  -lcalculatorSLib 

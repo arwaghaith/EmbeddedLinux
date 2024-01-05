@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/calculator.dir/calc/main.c.o -o calculator  Lib/libcalculatorSLib.a 

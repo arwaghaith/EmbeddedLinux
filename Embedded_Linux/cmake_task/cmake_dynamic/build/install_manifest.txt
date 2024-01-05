@@ -1,1 +1,1 @@
-/usr/lib/libdynamicCalc.so
+/usr/lib/libcalculatorSLib.a

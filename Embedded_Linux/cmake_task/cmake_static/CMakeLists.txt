@@ -1,32 +1,13 @@
 cmake_minimum_required(VERSION 3.22)
-project(calculator_lib)
+project(calculator)
 
-# List of source files
-set(SRCs
-    Lib/addition.c
-    Lib/division.c
-    Lib/modulus.c
-    Lib/multiplication.c
-    Lib/subtraction.c
-)
+# List of source files for the executable
+set(SRCS calc/main.c)
 
-# List of header files
-set(HEADRs
-    Include/addition.h
-    Include/division.h
-    Include/modulus.h
-    Include/multiplication.h
-    Include/subtraction.h
-)
+add_subdirectory(${CMAKE_SOURCE_DIR}/Lib)
+# Create the executable named calc
+add_executable(calculator ${SRCS})
 
-# Create a library named calculatorSLib
-add_library(calculatorSLib STATIC ${SRCs} ${HEADRs})
-
-# Set the include directories for the library
-target_include_directories(calculatorSLib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Include)
-
-# Specify the installation directory for the library
-install(TARGETS calculatorSLib
-    ARCHIVE DESTINATION /usr/lib
-)
+# Link the executable to the calculatorSLib library
+target_link_libraries(calculator PUBLIC calculatorSLib)
 

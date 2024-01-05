@@ -63,42 +63,85 @@ CMAKE_BINARY_DIR = /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dyn
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/dynamicCalc.dir/all
+all: CMakeFiles/calculator.dir/all
+all: Lib/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: Lib/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/dynamicCalc.dir/clean
+clean: CMakeFiles/calculator.dir/clean
+clean: Lib/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/dynamicCalc.dir
+# Directory level rules for directory Lib
+
+# Recursive "all" directory target.
+Lib/all: Lib/CMakeFiles/dynamicCalc.dir/all
+.PHONY : Lib/all
+
+# Recursive "preinstall" directory target.
+Lib/preinstall:
+.PHONY : Lib/preinstall
+
+# Recursive "clean" directory target.
+Lib/clean: Lib/CMakeFiles/dynamicCalc.dir/clean
+.PHONY : Lib/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/calculator.dir
 
 # All Build rule for target.
-CMakeFiles/dynamicCalc.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target dynamicCalc"
-.PHONY : CMakeFiles/dynamicCalc.dir/all
+CMakeFiles/calculator.dir/all: Lib/CMakeFiles/dynamicCalc.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/CMakeFiles --progress-num=1,2 "Built target calculator"
+.PHONY : CMakeFiles/calculator.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/dynamicCalc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamicCalc.dir/all
+CMakeFiles/calculator.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/calculator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/CMakeFiles 0
-.PHONY : CMakeFiles/dynamicCalc.dir/rule
+.PHONY : CMakeFiles/calculator.dir/rule
 
 # Convenience name for target.
-dynamicCalc: CMakeFiles/dynamicCalc.dir/rule
+calculator: CMakeFiles/calculator.dir/rule
+.PHONY : calculator
+
+# clean rule for target.
+CMakeFiles/calculator.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/clean
+.PHONY : CMakeFiles/calculator.dir/clean
+
+#=============================================================================
+# Target rules for target Lib/CMakeFiles/dynamicCalc.dir
+
+# All Build rule for target.
+Lib/CMakeFiles/dynamicCalc.dir/all:
+	$(MAKE) $(MAKESILENT) -f Lib/CMakeFiles/dynamicCalc.dir/build.make Lib/CMakeFiles/dynamicCalc.dir/depend
+	$(MAKE) $(MAKESILENT) -f Lib/CMakeFiles/dynamicCalc.dir/build.make Lib/CMakeFiles/dynamicCalc.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/CMakeFiles --progress-num=3,4,5,6,7,8 "Built target dynamicCalc"
+.PHONY : Lib/CMakeFiles/dynamicCalc.dir/all
+
+# Build rule for subdir invocation for target.
+Lib/CMakeFiles/dynamicCalc.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lib/CMakeFiles/dynamicCalc.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arwa/embedded/embedded_linux_task4/cmake_task/cmake_dynamic/CMakeFiles 0
+.PHONY : Lib/CMakeFiles/dynamicCalc.dir/rule
+
+# Convenience name for target.
+dynamicCalc: Lib/CMakeFiles/dynamicCalc.dir/rule
 .PHONY : dynamicCalc
 
 # clean rule for target.
-CMakeFiles/dynamicCalc.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamicCalc.dir/build.make CMakeFiles/dynamicCalc.dir/clean
-.PHONY : CMakeFiles/dynamicCalc.dir/clean
+Lib/CMakeFiles/dynamicCalc.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Lib/CMakeFiles/dynamicCalc.dir/build.make Lib/CMakeFiles/dynamicCalc.dir/clean
+.PHONY : Lib/CMakeFiles/dynamicCalc.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

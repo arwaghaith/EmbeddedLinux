@@ -10,18 +10,19 @@ set(CMAKE_CXX_STANDARD 11)
 
 # Set the source files for your project
 set(PROJECT_SOURCES 
-   main.c
+   calc/main.c
 )
 
 # Set the header files for your project
 set(PROJECT_HEADERS
-    ../Include/addition.h
-    ../Include/division.h
-    ../Include/modulus.h
-    ../Include/multiplication.h
-    ../Include/subtraction.h
+    Include/addition.h
+    Include/division.h
+    Include/modulus.h
+    Include/multiplication.h
+    Include/subtraction.h
 )
 
+add_subdirectory(${CMAKE_SOURCE_DIR}/Lib)
 # Add the executable target
 add_executable(calculator ${PROJECT_SOURCES} ${PROJECT_HEADERS})
 
