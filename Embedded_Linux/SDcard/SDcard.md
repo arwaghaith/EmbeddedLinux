@@ -11,6 +11,9 @@ To create an SD image for a bootloader, follow these steps:
     ```bash
     sudo cfdisk sd.img
     ```
+    <br> <br>
+    ![boot1](boot1.jpg)
+
 
 3. Find an available loop device and associate it with the `sd.img` file:
     ```bash
@@ -42,9 +45,17 @@ To create an SD image for a bootloader, follow these steps:
     sudo mkfs.ext4 -L rootfs ${DISK}p2
     ```
 
+  <br> <br>
+    ![boot1](boot2.jpg)
+   <br> <br>
+
 9. Verify the disk and its partitions:
     ```bash
     lsblk -o NAME,LABEL,FSTYPE ${DISK}
     ```
+
+  <br> <br>
+    ![boot3](boot3.jpg)
+   <br> <br>
 
 That's it! You have successfully created an SD image for a bootloader using the provided commands. Make sure to replace `<loopX>` with the appropriate loop device number on your system.
