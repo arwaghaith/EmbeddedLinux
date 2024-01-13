@@ -30,6 +30,11 @@ Before you begin, make sure you have the following:
     ```bash
     git checkout v2022.07
     ```
+    cp boot4 u-boot/
+
+    <br> <br>
+      ![boot4](boot4.jpg)
+   <br> <br>
 
 4. List the available machine configurations:
 
@@ -66,7 +71,9 @@ Before you begin, make sure you have the following:
     ```bash
     make menuconfig
     ```
-
+   <br> <br>
+    ![boot5](boot5.jpg)
+   <br> <br>
 10. Build U-Boot:
 
      ```bash
@@ -97,6 +104,12 @@ Before you begin, make sure you have the following:
      dpkg -l | grep qemu-system-arm
      ```
 
+15. Copy the `boot4` image to the U-Boot directory:
+
+    ```bash
+    cp boot4 u-boot/
+    ```
+
 15. Run U-Boot using QEMU with the vexpress-a9 machine and 128MB of RAM:
 
      ```bash
@@ -105,11 +118,18 @@ Before you begin, make sure you have the following:
 
      Replace `path/u-boot` with the path to your U-Boot binary and `path/sd.img` with the path to your SD card image.
 
+
+   <br> <br>
+    ![boot7](boot7.jpg)
+   <br> <br>
 16. Flash the binary using `fatload` on RAM address `0x6000000`:
 
      ```bash
      fatload mmc 0:1 0x6000000 <binary_file>
      ```
+     <br> <br>
+    ![boot6](boot6.jpg)
+     <br> <br>
 
      Replace `<binary_file>` with the name of your binary file.
 
