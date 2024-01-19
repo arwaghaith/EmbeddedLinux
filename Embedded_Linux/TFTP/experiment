@@ -1,0 +1,32 @@
+sudo apt-get install tftpd-hpa
+sudo ss -tulpn | grep :69
+sudo systemctl status tftpd-hpa
+sudo vim /etc/default/tftpd-hpa
+TFTP_OPTIONS="--secure --create"
+systemctl restart tftpd-hpa
+systemctl status tftpd-hpa
+mkdir /srv/tftp
+cd /srv
+chown tftp:tftp tftp 
+sudo vim Zimage 
+"type the kernel commands inside"
+sudo vim hardware.dtb
+"type the device tree commands inside"
+ip addr  //to get the server ip address
+#!/bin/sh
+ip a add 192.168.1.15 dev $1
+
+//create a acript called qemu-ifup
+ip link set $1 up
+chmod +x qemu-ifup
+sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic -kernel path/u-boot -sd path/sd.img -net tap,script=./qemu-ifup -net nic
+setenv serverIP 192.168.1.1
+setenv IPaddr 192.168.1.16  
+setenv kernel_address 0x60000000
+setenv fdt_address 0x60000020
+saveenv
+setenv Load_From_FAT 'fatload mmc 0:1 ${kernel_address} Zimage; fatload mmc 0:1 ${fdt_address} hardware.dtb'
+setenv Load_From_TFTP 'tftp ${kernel_address} Zimage; tftp ${fdt_address} hardware.dtb'                       
+saveenv
+setenv bootcmd 'echo "Arwa"; if run Load_From_FAT; then echo "Loaded from FAT";elif run Load_From_TFTP; then echo "Loaded from TFTP";fi
+bootd                                                   
