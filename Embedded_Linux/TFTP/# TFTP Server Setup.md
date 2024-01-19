@@ -171,7 +171,7 @@ in case there is zimage and hardware.dtb files in /boot directory:
 ![tftp15](tftp16.png)
 <br><br>
 
-otherrwise
+otherwise
 
 <br><br>
 ![tftp16](tftp15.png)
