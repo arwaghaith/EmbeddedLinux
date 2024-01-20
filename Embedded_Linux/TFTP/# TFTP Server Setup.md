@@ -127,7 +127,7 @@ U-Boot Configuration
 Access U-Boot prompt:
 
 ```
-setenv serverIP 192.168.1.1
+setenv serverIP 192.168.1.15
 setenv IPaddr 192.168.1.16  
 setenv kernel_address 0x60000000
 setenv fdt_address 0x60000020
