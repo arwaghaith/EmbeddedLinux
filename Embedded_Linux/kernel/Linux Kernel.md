@@ -5,10 +5,7 @@ These commands provide a step-by-step guide for configuring and building the Lin
 1. Cloning the Linux kernel repository.
 2. Configuring the kernel to the vexpress architecture.
 3. Building the kernel and modules.
-4. Emulating the sd.img file as a SD card.
-5. Formatting the partitions on the SD card.
-6. Mounting the partitions and copying the kernel files.
-7. Running the kernel using QEMU.
+4. Running the kernel using QEMU.
 
 The file is accompanied by screenshots that illustrate the different steps.
 
@@ -16,6 +13,9 @@ Please note that the paths and commands mentioned in the code may need to be adj
 
 Follow the instructions carefully to successfully build and run the Linux kernel.
 Linux Kernel
+
+## 1. Clone the Linux Kernel Repository
+
 ```
 git clone --depth=1 git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
 ```
@@ -23,6 +23,7 @@ git clone --depth=1 git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.g
 ![kernel1](assets/kernel1.png)
 <br><br>
 ```
+## Navigate to the Linux Kernel Directory
 cd linux
 ```
 #configure the kernel to vexpress
@@ -57,7 +58,7 @@ export ARCH=arm
 ![kernel3](assets/kernel3.png)
 <br><br>
 
-#configure the kernel with the configuration discuss above
+#configure the kernel with the required configuration 
 ```
 make menuconfig
 ```
@@ -140,10 +141,12 @@ cp linux/arch/arm/boot/dts/arm/*-ca9.dtb /srv/tftp
 ![kernel8](assets/kernel8.png)
 <br><br>
 ```
+# Run QEMU with the Configured Kernel
+
 sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic -kernel path/u-boot -sd path/sd.img -net tap,script=./qemu-ifup -net nic
 ```
 
-
+#U-Boot Configuration
 ```
 setenv serverip 192.168.1.15
 saveenv
@@ -183,6 +186,9 @@ saveenv
 
 ![kernel10](assets/kernel10.png)
 <br><br>
+
+
+#Load Kernel and Device Tree
 ```
 tftp ${kernel_address} zImage
 ```
@@ -199,7 +205,7 @@ tftp ${fdt_address} vexpress-v2p-ca9.dtb
 
 ![kernel12](assets/kernelb.png)
 <br><br>
-
+#Boot the Kernel
 ```
 bootz ${kernel_address} - ${fdt_address}
 ```
@@ -213,4 +219,4 @@ bootz ${kernel_address} - ${fdt_address}
 ![kernel14](assets/kerneld.png)
 <br><br>
 ```
-Congatulations you have successfully booted the kernel
+##Congratulations! You have successfully configured, built, and booted the Linux kernel using QEMU. 
