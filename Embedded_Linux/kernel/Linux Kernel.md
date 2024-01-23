@@ -14,7 +14,7 @@ Please note that the paths and commands mentioned in the code may need to be adj
 Follow the instructions carefully to successfully build and run the Linux kernel.
 Linux Kernel
 
-## 1. Clone the Linux Kernel Repository
+##  Clone the Linux Kernel Repository
 
 ```
 git clone --depth=1 git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
@@ -22,11 +22,13 @@ git clone --depth=1 git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.g
 <br><br>
 ![kernel1](assets/kernel1.png)
 <br><br>
-```
+
 ## Navigate to the Linux Kernel Directory
+```
 cd linux
 ```
-#configure the kernel to vexpress
+# configure the kernel to vexpress
+
 ```
 make ARCH=arm vexpress_defconfig
 ```
@@ -43,12 +45,12 @@ make ARCH=arm kernelversion
 
 Configure Kernel
 
-#export the compiler
+# export the compiler
 ```
 export CROSS_COMPILE=PathToCompiler/arm-linux-cortexa9Compiler
 ```
 
-#export the architecture used
+# export the architecture used
 ```
 export ARCH=arm
 ```
@@ -58,7 +60,7 @@ export ARCH=arm
 ![kernel3](assets/kernel3.png)
 <br><br>
 
-#configure the kernel with the required configuration 
+# configure the kernel with the required configuration 
 ```
 make menuconfig
 ```
@@ -68,7 +70,7 @@ make menuconfig
 ![kernel4](assets/kernel4.png)
 <br><br>
 
-#build the kernel
+# build the kernel
 ```
 make -j4 zImage modules dtbs
 make -j4 ARCH=arm CROSS_COMPILE=arm-cortex_a8-linux-gnueabihf- INSTALL_MOD_PATH=$HOME/rootfs 
@@ -79,8 +81,10 @@ modules_install
 ![kernel5](assets/kernel5.png)
 <br><br>
 
+# OPTIONAL
+# To emulate the sd.img file as a sd card we need to attach it to loop driver to be as a block storage
 
-To emulate the sd.img file as a sd card we need to attach it to loop driver to be as a block storage
+
 
 # attach the sd.img to be treated as block storage
 ```
@@ -117,8 +121,8 @@ sudo mkfs.ext4 -L rootfs ${DISK}p2
 ![kernel6](assets/kernel6.png)
 <br><br>
 
-Mounting the partitions
-#copy the kernel to the boot directory
+# Mounting the partitions
+copy the kernel to the boot directory
 ```
 cp linux/arch/arm/boot/zImage /boot/
 cp linux/arch/arm/boot/dts/arm/*-ca9.dtb /boot/
@@ -140,13 +144,13 @@ cp linux/arch/arm/boot/dts/arm/*-ca9.dtb /srv/tftp
 
 ![kernel8](assets/kernel8.png)
 <br><br>
-```
-# Run QEMU with the Configured Kernel
 
+# Run QEMU with the Configured Kernel
+```
 sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic -kernel path/u-boot -sd path/sd.img -net tap,script=./qemu-ifup -net nic
 ```
 
-#U-Boot Configuration
+# U-Boot Configuration
 ```
 setenv serverip 192.168.1.15
 saveenv
@@ -170,13 +174,13 @@ setenv bootargs console=ttyAMA0
 saveenv
 ```
 
-Define the command to load kernel and device tree from FAT:
+# Define the command to load kernel and device tree from FAT:
 ```
 setenv Load_From_FAT 'fatload mmc 0:1 ${kernel_address} Zimage; fatload mmc 0:1 ${fdt_address}  vexpress-v2p-ca9.dtb'
 saveenv
 ```
 
-Define the command to load kernel and device tree from TFTP:
+# Define the command to load kernel and device tree from TFTP:
 ```
 setenv Load_From_TFTP 'tftp ${kernel_address} Zimage; tftp ${fdt_address} vexpress-v2p-ca9.dtb'
 saveenv
@@ -188,7 +192,7 @@ saveenv
 <br><br>
 
 
-#Load Kernel and Device Tree
+# Load Kernel and Device Tree
 ```
 tftp ${kernel_address} zImage
 ```
@@ -205,7 +209,8 @@ tftp ${fdt_address} vexpress-v2p-ca9.dtb
 
 ![kernel12](assets/kernelb.png)
 <br><br>
-#Boot the Kernel
+
+# Boot the Kernel
 ```
 bootz ${kernel_address} - ${fdt_address}
 ```
@@ -218,5 +223,5 @@ bootz ${kernel_address} - ${fdt_address}
 
 ![kernel14](assets/kerneld.png)
 <br><br>
-```
-##Congratulations! You have successfully configured, built, and booted the Linux kernel using QEMU. 
+
+# Congratulations! You have successfully configured, built, and booted the Linux kernel using QEMU. 
