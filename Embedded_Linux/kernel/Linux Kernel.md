@@ -1,3 +1,20 @@
+# Linux Kernel
+
+These commands provide a step-by-step guide for configuring and building the Linux kernel. It covers the following tasks:
+
+1. Cloning the Linux kernel repository.
+2. Configuring the kernel to the vexpress architecture.
+3. Building the kernel and modules.
+4. Emulating the sd.img file as a SD card.
+5. Formatting the partitions on the SD card.
+6. Mounting the partitions and copying the kernel files.
+7. Running the kernel using QEMU.
+
+The file is accompanied by screenshots that illustrate the different steps.
+
+Please note that the paths and commands mentioned in the code may need to be adjusted based on your specific setup.
+
+Follow the instructions carefully to successfully build and run the Linux kernel.
 Linux Kernel
 ```
 git clone --depth=1 git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
@@ -32,7 +49,6 @@ export CROSS_COMPILE=PathToCompiler/arm-linux-cortexa9Compiler
 
 #export the architecture used
 ```
-
 export ARCH=arm
 ```
 
@@ -43,7 +59,6 @@ export ARCH=arm
 
 #configure the kernel with the configuration discuss above
 ```
-
 make menuconfig
 ```
 
@@ -54,9 +69,7 @@ make menuconfig
 
 #build the kernel
 ```
-
 make -j4 zImage modules dtbs
-
 make -j4 ARCH=arm CROSS_COMPILE=arm-cortex_a8-linux-gnueabihf- INSTALL_MOD_PATH=$HOME/rootfs 
 ```
 modules_install
@@ -70,17 +83,15 @@ To emulate the sd.img file as a sd card we need to attach it to loop driver to b
 
 # attach the sd.img to be treated as block storage
 ```
-
 sudo losetup -f --show --partscan sd.img
 ```
 
-# Running the upper command will show you
-# Which loop device the sd.img is connected
-# take it and assign it like down bellow command
+ Running the upper command will show you
+ Which loop device the sd.img is connected
+ take it and assign it like down bellow command
 
-# Assign the Block device as global variable to be treated as MACRO
+ Assign the Block device as global variable to be treated as MACRO
 ```
-
 export DISK=/dev/loop<x>
 ```
 
@@ -97,7 +108,6 @@ As pre configured from cfdisk Command second partition is linux
 
 # format the created partition by ext4
 ```
-
 sudo mkfs.ext4 -L rootfs ${DISK}p2
 ```
 
@@ -109,14 +119,11 @@ sudo mkfs.ext4 -L rootfs ${DISK}p2
 Mounting the partitions
 #copy the kernel to the boot directory
 ```
-
 cp linux/arch/arm/boot/zImage /boot/
 cp linux/arch/arm/boot/dts/arm/*-ca9.dtb /boot/
 ```
 
 ```
-
-
 cp linux/arch/arm/boot/zImage /srv/tftp
 ```
 
@@ -125,7 +132,6 @@ cp linux/arch/arm/boot/zImage /srv/tftp
 ![kernel7](assets/kernel7.png)
 <br><br>
 ```
-
 cp linux/arch/arm/boot/dts/arm/*-ca9.dtb /srv/tftp
 ```
 
@@ -134,14 +140,11 @@ cp linux/arch/arm/boot/dts/arm/*-ca9.dtb /srv/tftp
 ![kernel8](assets/kernel8.png)
 <br><br>
 ```
-
 sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic -kernel path/u-boot -sd path/sd.img -net tap,script=./qemu-ifup -net nic
 ```
 
 
 ```
-
-
 setenv serverip 192.168.1.15
 saveenv
 
@@ -160,21 +163,18 @@ saveenv
 ![kernel9](assets/kernel9.png)
 <br><br>
 ```
-
 setenv bootargs console=ttyAMA0
 saveenv
 ```
 
 Define the command to load kernel and device tree from FAT:
 ```
-
 setenv Load_From_FAT 'fatload mmc 0:1 ${kernel_address} Zimage; fatload mmc 0:1 ${fdt_address}  vexpress-v2p-ca9.dtb'
 saveenv
 ```
 
 Define the command to load kernel and device tree from TFTP:
 ```
-
 setenv Load_From_TFTP 'tftp ${kernel_address} Zimage; tftp ${fdt_address} vexpress-v2p-ca9.dtb'
 saveenv
 ```
@@ -184,7 +184,6 @@ saveenv
 ![kernel10](assets/kernel10.png)
 <br><br>
 ```
-
 tftp ${kernel_address} zImage
 ```
 
@@ -193,7 +192,6 @@ tftp ${kernel_address} zImage
 ![kernel11](assets/kernela.png)
 <br><br>
 ```
-
 tftp ${fdt_address} vexpress-v2p-ca9.dtb
 ```
 
@@ -203,7 +201,6 @@ tftp ${fdt_address} vexpress-v2p-ca9.dtb
 <br><br>
 
 ```
-
 bootz ${kernel_address} - ${fdt_address}
 ```
 
