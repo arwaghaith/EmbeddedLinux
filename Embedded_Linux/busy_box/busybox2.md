@@ -40,6 +40,8 @@ make
 ```
 make install
 ```
+![b2a](assets/b2a.png)
+
 ```
 cd
 mkdir rootfs_Dynamic
