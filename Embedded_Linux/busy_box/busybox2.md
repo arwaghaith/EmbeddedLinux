@@ -114,10 +114,11 @@ fatload mmc 0:1 $Zimag_RAM_Add zImage
 
 fatload mmc 0:1 $dtb_hardware_Add vexpress-v2p-ca9.dtb
 bootz $Zimag_RAM_Add - $dtb_hardware_Add
-```<br><br>
-![c1](assets/c1.png)
+```
+<br><br>
+![c3](assets/c1.png)
 <br><br>
 <br><br>
 
-![c2](assets/c2.png)
+![c4](assets/c2.png)
 <br><br>
