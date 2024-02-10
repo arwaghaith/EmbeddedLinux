@@ -18,7 +18,9 @@ vim Date_Time
 
 <br>
 <br>
+
 ![ser1](assets/ser1.png)
+
 <br>
 <br>
 
@@ -51,7 +53,9 @@ esac
 
 <br>
 <br>
+
 ![ser2](assets/s4.png)
+
 <br>
 <br>
 
@@ -63,7 +67,9 @@ chmod +x Date_Time
 
 <br>
 <br>
+
 ![s3](assets/ser2.png)<br>
+
 <br>
 
 # copy the file to /usr/local/sbin
@@ -74,7 +80,9 @@ cp Date_Time /usr/local/sbin/
 
 <br>
 <br>
+
 ![s4](assets/ser3.png)<br>
+
 <br>
 
 # Open the service file for editing with root privileges
@@ -85,7 +93,9 @@ sudo vim Date_Time.service
 
 <br>
 <br>
+
 ![ser 5](assets/ser5.png)
+
 <br>
 <br>
 
@@ -111,7 +121,9 @@ WantedBy=multi-user.target
 
 <br>
 <br>
+
 ![ser 6](assets/ser6.png)
+
 <br>
 <br>
 
@@ -133,7 +145,9 @@ sudo systemctl start Date_Time.service
 
 <br>
 <br>
-![ser 7](assets/ser7.png)
+
+![ser7](assets/ser8.png)
+
 <br>
 <br>
 
@@ -151,10 +165,23 @@ or <br>
 journalctl -u Date_Time
 ```
 
-# sudo systemctl status Date\_Time.service gives a quick summary of the current status of the service along with recent log messages, while journalctl -u Date\_Time provides access to the complete log history for the service.
+```
+sudo systemctl status Date_Time
+```
+
+service gives a quick summary of the current status of the service along with recent log messages, while 
+
+```
+journalctl -u Date_Time 
+```
+provides access to the complete log history for the service.
+
 
 <br>
 <br>
-![Iservice 8](assets/ser8.png)
+
+![ser8](assets/ser8.png)
+
 <br>
 <br>
+
