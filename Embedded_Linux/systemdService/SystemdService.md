@@ -1,28 +1,16 @@
 ## A unit service
 
-# This file selection includes a bash script and a systemd service file for a custom date service.
+This file selection includes a bash script and a systemd service file for a custom date service.
 
-<br><br>
+The bash script defines two functions: `hellostart()` and `hellostop()`. The `hellostart()` function continuously prints "Hello World" along with the current date and time using the `date` command, and then sleeps for 3 seconds. The `hellostop()` function kills all instances of the script.
 
-# The bash script defines two functions: `hellostart()` and `hellostop()`. The `hellostart()` function continuously prints "Hello World" along with the current date and time using the `date` command, and then sleeps for 3 seconds. The `hellostop()` function kills all instances of the script.
+The script also includes a case statement that checks the command-line argument passed to the script. If the argument is "start", it calls the `hellostart()` function. If the argument is "stop", it calls the `hellostop()` function.
 
-<br><br>
+The systemd service file (`Date_Time.service`) is used to manage the execution of the bash script as a service. It specifies that the service should be started after the multi-user target and before the network target. The `ExecStart` directive specifies the command to start the service, and the `ExecStop` directive specifies the command to stop the service.
 
-# The script also includes a case statement that checks the command-line argument passed to the script. If the argument is "start", it calls the `hellostart()` function. If the argument is "stop", it calls the `hellostop()` function.
+To use the service, the script needs to be made executable using the `chmod +x` command. Then, the service file needs to be created or edited using a text editor (e.g., `sudo vim Date_Time.service`) and the appropriate paths and options should be set.
 
-<br><br>
-
-# The systemd service file (`Date_Time.service`) is used to manage the execution of the bash script as a service. It specifies that the service should be started after the multi-user target and before the network target. The `ExecStart` directive specifies the command to start the service, and the `ExecStop` directive specifies the command to stop the service.
-
-<br><br>
-
-# To use the service, the script needs to be made executable using the `chmod +x` command. Then, the service file needs to be created or edited using a text editor (e.g., `sudo vim Date_Time.service`) and the appropriate paths and options should be set.
-
-<br><br>
-
-# Finally, the systemd commands `sudo systemctl daemon-reload`, `sudo systemctl start Date_Time.service`, and `sudo systemctl status Date_Time.service` are used to reload the systemd configuration, start the service, and check its status, respectively.
-
-<br><br>
+Finally, the systemd commands `sudo systemctl daemon-reload`, `sudo systemctl start Date_Time.service`, and `sudo systemctl status Date_Time.service` are used to reload the systemd configuration, start the service, and check its status, respectively.
 
 ```
 vim Date_Time
@@ -167,6 +155,6 @@ journalctl -u Date_Time
 
 <br>
 <br>
-![ser 8](assets/ser8.png)
+![Iservice 8](assets/ser8.png)
 <br>
 <br>
