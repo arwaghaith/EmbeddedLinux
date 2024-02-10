@@ -1,30 +1,33 @@
-## A unit service 
+## A unit service
 
-# This file selection includes a bash script and a systemd service file for a custom date service. 
+# This file selection includes a bash script and a systemd service file for a custom date service.
+
 <br><br>
 
 # The bash script defines two functions: `hellostart()` and `hellostop()`. The `hellostart()` function continuously prints "Hello World" along with the current date and time using the `date` command, and then sleeps for 3 seconds. The `hellostop()` function kills all instances of the script.
-<br><br>
 
+<br><br>
 
 # The script also includes a case statement that checks the command-line argument passed to the script. If the argument is "start", it calls the `hellostart()` function. If the argument is "stop", it calls the `hellostop()` function.
-<br><br>
 
+<br><br>
 
 # The systemd service file (`Date_Time.service`) is used to manage the execution of the bash script as a service. It specifies that the service should be started after the multi-user target and before the network target. The `ExecStart` directive specifies the command to start the service, and the `ExecStop` directive specifies the command to stop the service.
-<br><br>
 
+<br><br>
 
 # To use the service, the script needs to be made executable using the `chmod +x` command. Then, the service file needs to be created or edited using a text editor (e.g., `sudo vim Date_Time.service`) and the appropriate paths and options should be set.
+
 <br><br>
 
-
 # Finally, the systemd commands `sudo systemctl daemon-reload`, `sudo systemctl start Date_Time.service`, and `sudo systemctl status Date_Time.service` are used to reload the systemd configuration, start the service, and check its status, respectively.
+
 <br><br>
 
 ```
 vim Date_Time
 ```
+
 <br>
 <br>
 ![ser1](assets/ser1.png)
@@ -56,7 +59,7 @@ case "$1" in
         ;;
 esac
 
-```  
+```
 
 <br>
 <br>
@@ -64,29 +67,34 @@ esac
 <br>
 <br>
 
- 
 # Make the script executable
+
 ```
 chmod +x Date_Time
 ```
+
 <br>
 <br>
 ![s3](assets/ser2.png)<br>
 <br>
 
 # copy the file to /usr/local/sbin
+
 ```
 cp Date_Time /usr/local/sbin/
 ```
+
 <br>
 <br>
 ![s4](assets/ser3.png)<br>
 <br>
 
 # Open the service file for editing with root privileges
+
 ```
 sudo vim Date_Time.service
 ```
+
 <br>
 <br>
 ![ser 5](assets/ser5.png)
@@ -120,33 +128,42 @@ WantedBy=multi-user.target
 <br>
 
 # Reload the systemd daemon to apply any changes made to unit files
+
 <br><br>
 
 ```
 sudo systemctl daemon-reload
 ```
-# Start the Date_Time service
+
+# Start the Date\_Time service
+
 <br><br>
 
 ```
 sudo systemctl start Date_Time.service
 ```
+
 <br>
 <br>
 ![ser 7](assets/ser7.png)
 <br>
 <br>
-# Check the status of the Date_Time service
+
+# Check the status of the Date\_Time service
+
+<br>
+
 ```
 sudo systemctl status Date_Time.service
 ```
-or
-<br>
+
+or <br>
+
 ```
 journalctl -u Date_Time
 ```
 
-# sudo systemctl status Date_Time.service gives a quick summary of the current status of the service along with recent log messages, while journalctl -u Date_Time provides access to the complete log history for the service.
+# sudo systemctl status Date\_Time.service gives a quick summary of the current status of the service along with recent log messages, while journalctl -u Date\_Time provides access to the complete log history for the service.
 
 <br>
 <br>
