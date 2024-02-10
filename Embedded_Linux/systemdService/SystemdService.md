@@ -13,7 +13,7 @@ Finally, the systemd commands `sudo systemctl daemon-reload`, `sudo systemctl st
 ```
 <br>
 <br>
-![ser 1](assets/ser1.png)
+![ser1](assets/ser1.png)
 <br>
 <br>
 
@@ -46,7 +46,7 @@ esac
 
 <br>
 <br>
-![ser 2](assets/ser4.png)
+![ser2](assets/s4.png)
 <br>
 <br>
 
@@ -57,8 +57,7 @@ chmod +x Date_Time
 ```
 <br>
 <br>
-![ser 3](assets/ser2.png)
-<br>
+![s3](assets/ser2.png)<br>
 <br>
 
 # copy the file to /usr/local/sbin
@@ -67,8 +66,7 @@ cp Date_Time /usr/local/sbin/
 ```
 <br>
 <br>
-![ser 4](assets/ser3.png)
-<br>
+![s4](assets/ser3.png)<br>
 <br>
 
 # Open the service file for editing with root privileges
