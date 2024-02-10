@@ -54,7 +54,7 @@ esac
 <br>
 <br>
 
-![ser2](assets/s4.png)
+![ser2](assets/ser4.png)
 
 <br>
 <br>
