@@ -9,12 +9,11 @@ The systemd service file (`Date_Time.service`) is used to manage the execution o
 To use the service, the script needs to be made executable using the `chmod +x` command. Then, the service file needs to be created or edited using a text editor (e.g., `sudo vim Date_Time.service`) and the appropriate paths and options should be set.
 
 Finally, the systemd commands `sudo systemctl daemon-reload`, `sudo systemctl start Date_Time.service`, and `sudo systemctl status Date_Time.service` are used to reload the systemd configuration, start the service, and check its status, respectively.
-```
-vim Date_Time
+```vim Date_Time
 ```
 <br>
 <br>
-![s1](assets/ser1.png)
+![ser 1](assets/ser1.png)
 <br>
 <br>
 
@@ -47,7 +46,7 @@ esac
 
 <br>
 <br>
-![s2](assets/ser4.png)
+![ser 2](assets/ser4.png)
 <br>
 <br>
 
@@ -58,7 +57,7 @@ chmod +x Date_Time
 ```
 <br>
 <br>
-![s3](assets/ser2.png)
+![ser 3](assets/ser2.png)
 <br>
 <br>
 
@@ -68,7 +67,7 @@ cp Date_Time /usr/local/sbin/
 ```
 <br>
 <br>
-![s4](assets/ser3.png)
+![ser 4](assets/ser3.png)
 <br>
 <br>
 
@@ -78,7 +77,7 @@ sudo vim Date_Time.service
 ```
 <br>
 <br>
-![s5](assets/ser5.png)
+![ser 5](assets/ser5.png)
 <br>
 <br>
 # The following section describes the unit and provides information about the service
@@ -90,7 +89,7 @@ After=multi-user.target
 Before=network.target
 
 # The following section defines the service behavior
-[Service]
+[ser ervice]
 Type=simple
 ExecStart=/usr/local/sbin/Date_Time start
 ExecStop=/usr/local/sbin/Date_Time stop
@@ -102,7 +101,7 @@ WantedBy=multi-user.target
 
 <br>
 <br>
-![s6](assets/ser6.png)
+![ser 6](assets/ser6.png)
 <br>
 <br>
 # Reload the systemd daemon to apply any changes made to unit files
@@ -115,7 +114,7 @@ sudo systemctl start Date_Time.service
 ```
 <br>
 <br>
-![s7](assets/ser7.png)
+![ser 7](assets/ser7.png)
 <br>
 <br>
 # Check the status of the Date_Time service
@@ -131,6 +130,6 @@ sudo systemctl status Date_Time.service gives a quick summary of the current sta
 
 <br>
 <br>
-![s8](assets/ser8.png)
+![ser 8](assets/ser8.png)
 <br>
 <br>
