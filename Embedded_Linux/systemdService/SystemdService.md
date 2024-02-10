@@ -1,15 +1,29 @@
-This file selection includes a bash script and a systemd service file for a custom date service. 
+## A unit service 
 
-The bash script defines two functions: `hellostart()` and `hellostop()`. The `hellostart()` function continuously prints "Hello World" along with the current date and time using the `date` command, and then sleeps for 3 seconds. The `hellostop()` function kills all instances of the script.
+# This file selection includes a bash script and a systemd service file for a custom date service. 
+<br><br>
 
-The script also includes a case statement that checks the command-line argument passed to the script. If the argument is "start", it calls the `hellostart()` function. If the argument is "stop", it calls the `hellostop()` function.
+# The bash script defines two functions: `hellostart()` and `hellostop()`. The `hellostart()` function continuously prints "Hello World" along with the current date and time using the `date` command, and then sleeps for 3 seconds. The `hellostop()` function kills all instances of the script.
+<br><br>
 
-The systemd service file (`Date_Time.service`) is used to manage the execution of the bash script as a service. It specifies that the service should be started after the multi-user target and before the network target. The `ExecStart` directive specifies the command to start the service, and the `ExecStop` directive specifies the command to stop the service.
 
-To use the service, the script needs to be made executable using the `chmod +x` command. Then, the service file needs to be created or edited using a text editor (e.g., `sudo vim Date_Time.service`) and the appropriate paths and options should be set.
+# The script also includes a case statement that checks the command-line argument passed to the script. If the argument is "start", it calls the `hellostart()` function. If the argument is "stop", it calls the `hellostop()` function.
+<br><br>
 
-Finally, the systemd commands `sudo systemctl daemon-reload`, `sudo systemctl start Date_Time.service`, and `sudo systemctl status Date_Time.service` are used to reload the systemd configuration, start the service, and check its status, respectively.
-```vim Date_Time
+
+# The systemd service file (`Date_Time.service`) is used to manage the execution of the bash script as a service. It specifies that the service should be started after the multi-user target and before the network target. The `ExecStart` directive specifies the command to start the service, and the `ExecStop` directive specifies the command to stop the service.
+<br><br>
+
+
+# To use the service, the script needs to be made executable using the `chmod +x` command. Then, the service file needs to be created or edited using a text editor (e.g., `sudo vim Date_Time.service`) and the appropriate paths and options should be set.
+<br><br>
+
+
+# Finally, the systemd commands `sudo systemctl daemon-reload`, `sudo systemctl start Date_Time.service`, and `sudo systemctl status Date_Time.service` are used to reload the systemd configuration, start the service, and check its status, respectively.
+<br><br>
+
+```
+vim Date_Time
 ```
 <br>
 <br>
@@ -20,7 +34,7 @@ Finally, the systemd commands `sudo systemctl daemon-reload`, `sudo systemctl st
 ```
 #!/bin/bash
 
-unction hellostart(){
+function hellostart(){
     while [ 1 ]
     do
         echo Hello World $(date)   # Print "Hello World" along with the current date
@@ -50,7 +64,7 @@ esac
 <br>
 <br>
 
-```  
+ 
 # Make the script executable
 ```
 chmod +x Date_Time
@@ -78,7 +92,9 @@ sudo vim Date_Time.service
 ![ser 5](assets/ser5.png)
 <br>
 <br>
+
 # The following section describes the unit and provides information about the service
+
 ```
 [Unit]
 Description=My Custom date Service
@@ -102,11 +118,16 @@ WantedBy=multi-user.target
 ![ser 6](assets/ser6.png)
 <br>
 <br>
+
 # Reload the systemd daemon to apply any changes made to unit files
+<br><br>
+
 ```
 sudo systemctl daemon-reload
 ```
 # Start the Date_Time service
+<br><br>
+
 ```
 sudo systemctl start Date_Time.service
 ```
@@ -124,7 +145,8 @@ or
 ```
 journalctl -u Date_Time
 ```
-sudo systemctl status Date_Time.service gives a quick summary of the current status of the service along with recent log messages, while journalctl -u Date_Time provides access to the complete log history for the service.
+
+# sudo systemctl status Date_Time.service gives a quick summary of the current status of the service along with recent log messages, while journalctl -u Date_Time provides access to the complete log history for the service.
 
 <br>
 <br>
