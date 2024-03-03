@@ -9,7 +9,7 @@ This repository contains instructions for setting up and building a Yocto Projec
 ## Setup
 
 1. Source the `poky/oe-init-build-env` script to initialize the build environment.
-    ```shell
+    ```
     source poky/oe-init-build-env
     ```
 
@@ -20,11 +20,11 @@ This repository contains instructions for setting up and building a Yocto Projec
 
 
 2.navigate to the build directory:
-    ```shell
+    ```
     cd ~/yocto/poky/build
     ```
  3. Run the following command to show the layers:
-    ```shell
+    ```
     bitbake-layers show-layers
     ```
     <br><br>
@@ -32,7 +32,7 @@ This repository contains instructions for setting up and building a Yocto Projec
 
 <br><br>
 4. Create a new layer:
-    ```shell
+    ```
     bitbake-layers create-layer /home/arwa/yocto/poky/meta-mylayer1
     ```
 
@@ -42,12 +42,12 @@ This repository contains instructions for setting up and building a Yocto Projec
 
 <br><br>
 5. Change directory to the new layer:
-    ```shell
+    ```
     cd ../meta-mylayer1
     ```
 
 6. Add the new layer to the build configuration:
-    ```shell
+    ```
     bitbake-layers add-layer /home/arwa/yocto/poky/meta-mylayer1
     ```
 
@@ -57,7 +57,7 @@ This repository contains instructions for setting up and building a Yocto Projec
 <br><br>
 
 7. If the layer is not automatically added, open the `bblayers.conf` file:
-    ```shell
+    ```
     vim ~/yocto/poky/build/conf/bblayers.conf
     ```
 
@@ -69,37 +69,37 @@ This repository contains instructions for setting up and building a Yocto Projec
 <br><br>
 
 8. Change directory to the recipe directory:
-    ```shell
+    ```
     cd ~/yocto/poky/meta-mylayer1/recipes-example
     ```
 
 9. Create a new directory for the recipe:
-    ```shell
+    ```
     mkdir helloworld
     ```
 
 10. Create a `files` directory inside the recipe directory:
-    ```shell
+    ```
     mkdir files
     ```
 
 11. Create a `helloworld.bb` file inside the recipe directory:
-    ```shell
+    ```
     touch helloworld.bb
     ```
 
 12. Change directory to the `files` directory:
-    ```shell
+    ```
     cd files
     ```
 
 13. Create a `helloworld.c` file inside the `files` directory:
-    ```shell
+    ```
     touch helloworld.c
     ```
 
 14. View the directory structure:
-    ```shell
+    ```
     tree
     ```
 <br><br>
@@ -107,7 +107,7 @@ This repository contains instructions for setting up and building a Yocto Projec
 
 <br><br>
 15. Check the value of the `COREBASE` variable for the `helloworld` recipe:
-    ```shell
+    ```
     bitbake -e helloworld | grep ^COREBASE=
     ```
     <br><br>
@@ -120,7 +120,7 @@ This repository contains instructions for setting up and building a Yocto Projec
 
 <br><br>
 16. Build the `helloworld` recipe:
-    ```shell
+    ```
     bitbake helloworld
     ```
 <br><br>
